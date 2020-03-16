@@ -60,7 +60,7 @@ Store the rotation of UnicornHat, defaults to
 0 which places 0,0 on the top left with the B+
 HDMI port facing downwards
 """
-_rotation = 0
+_rotation = 0 # values 0-3 = 0,90,180,270
 _requested_rotation = 0
 _wx = 32
 _wy = 8

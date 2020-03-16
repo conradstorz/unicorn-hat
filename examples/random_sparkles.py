@@ -17,7 +17,7 @@ unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
 unicorn.brightness(0.5)
 #width,height=unicorn.get_shape()
-width,height=(8,32)
+width,height=(32,8)
 
 while True:
     x = randint(0, (width-1))
