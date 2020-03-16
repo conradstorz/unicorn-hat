@@ -62,17 +62,17 @@ HDMI port facing downwards
 """
 _rotation = 0
 _requested_rotation = 0
-_wx = 8
+_wx = 32
 _wy = 8
 _map = []
-_pixels = [(0,0,0) for x in range(64)]
+_pixels = [(0,0,0) for x in range(_wx*_wy)]
 _is_setup = False
 ws2812 = None
 
 """
 Store a map of pixel indexes for
 translating x, y coordinates.
-"""
+
 HAT = [
     [7 , 6 , 5 , 4 , 3 , 2 , 1 , 0 ],
     [8 , 9 , 10, 11, 12, 13, 14, 15],
@@ -83,6 +83,19 @@ HAT = [
     [55, 54, 53, 52, 51, 50, 49, 48],
     [56, 57, 58, 59, 60, 61, 62, 63]
 ]
+"""
+map_x = _wx
+map_y = -wy
+
+# HAT = [x for x in range(map_x), y for y in range(map_y)]
+HAT=[]
+for xlist in range(map_x):
+    ylist = list(range(xlist*map_y,xlist*map_y+map_y))
+    if xlist%2 == 0:
+        ylist.reverse()
+    HAT.append(ylist)
+
+
 
 PHAT_VERTICAL = [
     [0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 ],
